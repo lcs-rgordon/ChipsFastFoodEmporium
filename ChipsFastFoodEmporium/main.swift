@@ -84,9 +84,11 @@ dessertCalorieCounts[2] = 266   // Sundae
 dessertCalorieCounts[3] = 75    // Fruit cup
 dessertCalorieCounts[4] = 0     // Nothing for dessert
 
-
 // Calculate total calories
-let totalCalories = burgerCalorieCounts[burgerChoice]
+let totalCalories = burgerCalorieCounts[burgerChoice] +
+                    sideOrderCalorieCounts[sideChoice] +
+                    drinkCaloriesCounts[drinkChoice] +
+                    dessertCalorieCounts[dessertChoice]
 
 // OUTPUT
 // Report results to the user here
