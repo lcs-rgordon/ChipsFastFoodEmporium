@@ -56,12 +56,34 @@ let drinkChoice = getMealChoice(withPrompt: "Please enter a drink choice: ")
 let dessertChoice = getMealChoice(withPrompt: "Please enter a dessert choice: ")
 
 // PROCESS
-// Data structures to store calorie counts for various choices
+// Data structure to store calorie counts for burgers
 var burgerCalorieCounts = Array(repeating: 0, count: 5)
 burgerCalorieCounts[1] = 461 // Cheeseburger
 burgerCalorieCounts[2] = 431 // Fishburger
 burgerCalorieCounts[3] = 420 // Veggieburger
 burgerCalorieCounts[4] = 0   // Nothingburger
+
+// Data structure to store calorie counts for side orders
+var sideOrderCalorieCounts = Array(repeating: 0, count: 5)
+sideOrderCalorieCounts[1] = 100 // Fries
+sideOrderCalorieCounts[2] = 57  // Baked potato
+sideOrderCalorieCounts[3] = 70  // Chef salad
+sideOrderCalorieCounts[4] = 0   // Nothing for side order
+
+// Data structure to store calorie counts for drinks
+var drinkCaloriesCounts = Array(repeating: 0, count: 5)
+drinkCaloriesCounts[1] = 130 // Soft drink
+drinkCaloriesCounts[2] = 160 // Orange juice
+drinkCaloriesCounts[3] = 118 // Milk
+drinkCaloriesCounts[4] = 0   // Nothing for drink
+
+// Data structure to store calorie counts for desserts
+var dessertCalorieCounts = Array(repeating: 0, count: 5)
+dessertCalorieCounts[1] = 167   // Apple pie
+dessertCalorieCounts[2] = 266   // Sundae
+dessertCalorieCounts[3] = 75    // Fruit cup
+dessertCalorieCounts[4] = 0     // Nothing for dessert
+
 
 // Calculate total calories
 let totalCalories = burgerCalorieCounts[burgerChoice]
