@@ -9,39 +9,51 @@
 import Foundation
 
 // INPUT
-// Collect and filter user input here
-var burgerChoice = 0
-while 1 == 1 {
+// Get meal choice
+func getMealChoice(withPrompt: String) -> Int {
     
-    // Prompt the user
-    print("Please enter a burger choice: ", terminator: "")
-    
-    // Test #1: Get input and make sure it is not nil
-    guard let givenInput = readLine() else {
+    var choice = 0
+    while 1 == 1 {
         
-        // Prompt again when input is nil
-        continue
+        // Prompt the user
+        print(withPrompt, terminator: "")
+        
+        // Test #1: Get input and make sure it is not nil
+        guard let givenInput = readLine() else {
+            
+            // Prompt again when input is nil
+            continue
+        }
+        
+        // Test #2: Can it be an integer?
+        guard let givenInteger = Int(givenInput) else {
+            
+            // Prompt again when input cannot be made into an integer
+            continue
+        }
+        
+        // Test #3: Is it in the acceptable range of 1 to 4?
+        if givenInteger < 1 || givenInteger > 4 {
+            
+            // Prompt again when too low or too hight
+            continue
+        }
+        
+        // If we got here, input is valid
+        choice = givenInteger
+        break
+        
     }
     
-    // Test #2: Can it be an integer?
-    guard let givenInteger = Int(givenInput) else {
-        
-        // Prompt again when input cannot be made into an integer
-        continue
-    }
-    
-    // Test #3: Is it in the acceptable range of 1 to 4?
-    if givenInteger < 1 || givenInteger > 4 {
-        
-        // Prompt again when too low or too hight
-        continue
-    }
-    
-    // If we got here, input is valid
-    burgerChoice = givenInteger
-    break
-    
+    // Exit the function
+    return choice
 }
+
+// Get the burger choice
+let burgerChoice = getMealChoice(withPrompt: "Please enter a burger choice: ")
+let sideChoice = getMealChoice(withPrompt: "Please enter a side order choice: ")
+let drinkChoice = getMealChoice(withPrompt: "Please enter a drink choice: ")
+let dessertChoice = getMealChoice(withPrompt: "Please enter a dessert choice: ")
 
 // PROCESS
 // Data structures to store calorie counts for various choices
